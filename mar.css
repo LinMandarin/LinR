@@ -1,4 +1,4 @@
-/* Основные стили */
+
 body {
     background-color: #333;
     color: #fff;
@@ -17,7 +17,7 @@ header {
     border-bottom: 1px solid #333;
 }
 
-/* Логотип */
+
 .logo {
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ header {
     color: white;
 }
 
-/* Навигация */
+
 .main-nav {
     display: flex;
     gap: 30px;
@@ -57,7 +57,7 @@ header {
     color: #ff3030;
 }
 
-/* Кнопки авторизации */
+
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -76,7 +76,7 @@ header {
     color: white;
 }
 
-/* Поиск */
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -90,7 +90,7 @@ header {
     font-size: 16px;
 }
 
-/* Товары */
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +127,7 @@ header {
     color: #bbb;
 }
 
-/* Кнопки */
+
 .item button {
     width: 100%;
     padding: 10px;
@@ -220,7 +220,6 @@ footer {
     color: #333;
 }
 
-/* Social Icons */
 .social-icons {
     display: flex;
     gap: 10px;
