@@ -41,12 +41,14 @@ header {
     font-weight: bold;
     font-size: 18px;
     color: white;
+    
 }
 
 
 .main-nav {
     display: flex;
     gap: 30px;
+    margin-left: 250px;
 }
 .main-nav a {
     font-weight: 500;
@@ -55,6 +57,31 @@ header {
 }
 .main-nav a:hover {
     color: #ff3030;
+}
+.cart-icon {
+    width: 50px;
+    height: 50px;
+
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    margin-left: auto;
+}
+.cart-count{
+    position: absolute;
+    background-color: #ff3030;
+    color: white;
+    border-radius: 30%;
+    padding: 2px 5px;
+    font-size: 12px;
+    top: 10px;
+    right: 420px;
+}
+.btn-cart {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 
@@ -138,11 +165,11 @@ header {
     transition: all 0.3s ease-in-out;
 }
 .add-to-cart {
-    background-color: #007bff;
+    background-color: #d12727;
     color: white;
 }
 .add-to-cart:hover {
-    background-color: #0056b3;
+    background-color: #08c0e9;
     transform: scale(1.1);
 }
 

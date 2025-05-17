@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="eng">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinRust Marketplace</title>
-    <link rel="stylesheet" href="mar.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -19,7 +19,12 @@
             <a href="#">Checker</a>
             <a href="#">Settings</a>
         </nav>
-        
+        <div class="cart">
+            <button class="btn-cart" onclick="location.href='./cart.html'">
+            <div class="cart-icon"><img src="./img/ship.png"></div>
+            <div class="cart-count">0</div>
+            </button>
+        </div>
         <div class="auth-buttons">
             <button class="btn-login">Log In</button>
             <button class="btn-signup">Sign Up</button>
@@ -253,6 +258,6 @@
         </div>
     </footer>
 
-    <script src="marsc.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
