@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinRust Marketplace</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="cart.css">
 </head>
 <body>
 
     <header>
         <button class="home" onclick="location.href='./index.html'">
         <div class="logo">
-            <div class="logo-img"><img src="./img/rust.png" alt="Rust illustration"></div>
+            <div class="logo-img">R</div>
             <div class="logo-text">LinRust</div>
         </div>
         </button>
@@ -22,9 +22,9 @@
             <a href="#">Settings</a>
         </nav>
         <div class="cart">
-            <button class="btn-cart" onclick="location.href='./cart.html'">
-            <div class="cart-icon"><img src="./img/ship.png"></div>
-            <div class="cart-count">0</div>
+            <button class="btn-cart" onclick="goToCart()">
+            <div class="cart-icon"><img src="./img/ship.png" alt="Cart Icon"></div>
+            <div class="cart-count" id="cartCount">0</div>
             </button>
         </div>
         <div class="auth-buttons">
@@ -33,179 +33,266 @@
         </div>
     </header>
 
-
     <div class="search-container">
         <input type="text" placeholder="🔍 Поиск товаров...">
     </div>
+    
     <div class="container">
-        <div class="item">
+        <div class="item" data-id="1" data-name="AK-47 Tempered" data-price="4230" data-description="Премиальная винтовка AK-47">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/731194749_preview_Tempered_AK47.png" alt="AK-47 Tempered">
+            <p><strong>AK-47 Tempered</strong></p>
+            <p>4 230 ₴</p>
+            <p class="description">Премиальная винтовка AK-47</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="2" data-name="Tundra Bolt" data-price="600" data-description="Легендарная винтовка Tundra Bolt">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/731194749_preview_Tundra_Bolt_Rifle.png" alt="M4A4 Dragon King">
+            <p><strong>Tundra Bolt</strong></p>
+            <p>600 ₴</p>
+            <p class="description">Легендарная винтовка Tundra Bolt</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="3" data-name="Crocodil Thompson" data-price="230" data-description="Скорострельный автомат Thompson">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Vd4WLHfDY0jhyo8DEiv5dbOaA8rbQwRvG-iXWVyZQ.png" alt="AWP Lightning Strike">
+            <p><strong>Crocodil Thompson</strong></p>
+            <p>230 ₴</p>
+            <p class="description">Скорострельный пистолет-пулемет Thompson</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="4" data-name="Tiger Berdanka" data-price="300" data-description="Стильная винтовка с необычным прицелом">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Vd42LFfDY0jhyo8DEiv5daPa45pLc0RP-3kVBWY3E.png" alt="Glock Fade">
+            <p><strong>Glock Fade</strong></p>
+            <p>300₴</p>
+            <p class="description">Стильная винтовка с необычным прицелом</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="5" data-name="Deep Ruby DBS" data-price="200" data-description="Пистолет USP-S с глушителем">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Vd42LDfDY0jhyo8DEiv5deMaE8rLEyR_5WAM2Yzg.png" alt="USP-S Kill Confirmed">
+            <p><strong>Deep Ruby DBS</strong></p>
+            <p>200 ₴</p>
+            <p class="description">Пистолет USP-S с глушителем</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="6" data-name="Tempered M5A4" data-price="15000" data-description="Закалёная солнечными лучами M5A4">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/360fx360f.png" alt="Knife Karambit Fade">
+            <p><strong>Tempered M5A4</strong></p>
+            <p>15 000 ₴</p>
+            <p class="description">Закалёная солнечными лучами M5A4</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="7" data-name="Tempered M249" data-price="1200" data-description="">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img/161768_s.png" alt="P90 Asiimov">
+            <p><strong>Tempered M249</strong></p>
+            <p>1 200 ₴</p>
+            <p class="description">Закалёный солнечными лучами M249</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="8" data-name="Big Grin Mask" data-price="43000" data-description="Уникальная и очень дорогая маска">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
+            <img src="./img/156fx156f.png" alt="Deagle Blaze">
+            <p><strong>Big Grin Mask</strong></p>
+            <p>43 000 ₴</p>
+            <p class="description">Уникальная и очень дорогая маска</p>
             <button class="add-to-cart">Add to cart</button>
-        </div><div class="item">
+        </div>
+        <div class="item" data-id="9" data-name="Blueprint berdanka" data-price="1660" data-description="Стильная и автоматическая винтовка">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img1/11047.png" alt="Glock Fade">
+            <p><strong>Blueprint berdanka</strong></p>
+            <p>1 660 ₴</p>
+            <p class="description">Стильная и автоматическая винтовка</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="10" data-name="Lava IcePick" data-price="700" data-description="Очень уникальный и красивый ледоруб">
+            <button class="favorite">★</button>
+            <img src="./img1/150fx150f.png" alt="Glock Fade">
+            <p><strong>Lava IcePick</strong></p>
+            <p>700 ₴</p>
+            <p class="description">Очень уникальный и красивый ледоруб</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="11" data-name="Tempered Mask" data-price="12990" data-description="Стильная и закалённая в боях маска">
+            <button class="favorite">★</button>
+            <img src="./img1/156fx156f (1).png" alt="Glock Fade">
+            <p><strong>Tempered Mask</strong></p>
+            <p>12 990 ₴</p>
+            <p class="description">Стильная и закалённая в боях маска</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="12" data-name="Rainbow M5A4" data-price="1200" data-description="Стильный пистолет-пулемет M4A4">
+            <button class="favorite">★</button>
+            <img src="./img1/159794_b.png" alt="Glock Fade">
+            <p><strong>Rainbow M5A4</strong></p>
+            <p>1 200 ₴</p>
+            <p class="description">Стильный пистолет-пулемет M4A4</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="13" data-name="Frozen Revolver" data-price="13000" data-description="Стильный пистолет Frozen Revolver">
+            <button class="favorite">★</button>
+            <img src="./img1/161847_b.png" alt="Glock Fade">
+            <p><strong>Frozen Revolver</strong></p>
+            <p>13 000 ₴</p>
+            <p class="description">Стильный пистолет Frozen Revolver</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+            <div class="item" data-id="14" data-name="Oil Rig Garage Door" data-price="240" data-description="Стильный гаражка в стиле Oil Rig">
+            <button class="favorite">★</button>
+            <img src="./img1/200fx200f (1).png" alt="Glock Fade">
+            <p><strong>Oil Rig Garage Door</strong></p>
+            <p>240 ₴</p>
+            <p class="description">Стильный гаражка в стиле Oil Rig</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="15" data-name="Tukan DBS" data-price="60" data-description="Стильная двушка с туканом DBS">
+            <button class="favorite">★</button>
+            <img src="./img1/200fx200f (3).png" alt="Glock Fade">
+            <p><strong>Tukan DBS</strong></p>
+            <p>60 ₴</p>
+            <p class="description">Стильная двушка с туканом DBS</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="16" data-name="Dragon RL" data-price="400" data-description="Стильный ракетомет Dragon">
+            <button class="favorite">★</button>
+            <img src="./img1/360fx360f (1).png" alt="Glock Fade">
+            <p><strong>Dragon RL</strong></p>
+            <p>400 ₴</p>
+            <p class="description">Стильный Rocket Launcher в виде дракона</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="17" data-name="Knock Knock RL" data-price="10000" data-description="Стильный ракетница Knock Knock">
+            <button class="favorite">★</button>
+            <img src="./img1/360fx360f (2).png" alt="Glock Fade">
+            <p><strong>Knock Knock RL</strong></p>
+            <p>10 000 ₴</p>
+            <p class="description">Стильный ракетница Knock Knock </p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="18" data-name="Component Box" data-price="1000" data-description="Стильный ящик для компонентов">
+            <button class="favorite">★</button>
+            <img src="./img1/360fx360f (3).png" alt="Glock Fade">
+            <p><strong>Glock Fade</strong></p>
+            <p>1 000 ₴</p>
+            <p class="description">Стильный ящик для компонентов</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="19" data-name="Dragon Garage Door" data-price="25000" data-description="Стильный гаражка в стиле Dragon">
+            <button class="favorite">★</button>
+            <img src="./img1/200fx200f.png" alt="Glock Fade">
+            <p><strong>Dragon Garage Door</strong></p>
+            <p>2 000 ₴</p>
+            <p class="description">Стильный гаражка в стиле Dragon</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="20" data-name="Acid LR-300" data-price="2500" data-description="Стильный и универсальная винтовка Acid LR-300">
+            <button class="favorite">★</button>
+            <img src="./img1/300.png" alt="Glock Fade">
+            <p><strong>Acid LR-300</strong></p>
+            <p>2 500 ₴</p>
+            <p class="description">Стильный и универсальная винтовка Acid LR-300</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="21" data-name="Drop Box" data-price="400" data-description="Стильный ящик для быстрого скида">
+            <button class="favorite">★</button>
+            <img src="./img1/360fx360f (4).png" alt="Glock Fade">
+            <p><strong>Drop Box</strong></p>
+            <p>400 ₴</p>
+            <p class="description">Стильный ящик для быстрого скида</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="22" data-name="Purple jackhummer" data-price="200" data-description="Стильный бур Purple jackhummer">
+            <button class="favorite">★</button>
+            <img src="./img1/41508.png" alt="Glock Fade">
+            <p><strong>Purple jackhummer</strong></p>
+            <p>200 ₴</p>
+            <p class="description">Стильный бур Purple jackhummer</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="23" data-name="Comics AK-47" data-price="4000" data-description="Стильный винтовка Comics AK-47">
+            <button class="favorite">★</button>
+            <img src="./img1/43603.png" alt="Glock Fade">
+            <p><strong>Comics AK-47</strong></p>
+            <p>4 000 ₴</p>
+            <p class="description">Стильный винтовка Comics AK-47</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="24" data-name="Glock Fade" data-price="1000" data-description="Стильный бур ввиде комикс">
+            <button class="favorite">★</button>
+            <img src="./img1/48107.png" alt="Glock Fade">
+            <p><strong>Glock Fade</strong></p>
+            <p>1 000 ₴</p>
+            <p class="description">Стильный бур ввиде комикс</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="25" data-name="Comps small box" data-price="400" data-description="Стильный ящик для компонентов">
+            <button class="favorite">★</button>
+            <img src="./img1/58900.png" alt="Glock Fade">
+            <p><strong>Glock Fade</strong></p>
+            <p>400 ₴</p>
+            <p class="description">Стильный ящик для компонентов</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="26" data-name="Chemistry G Door" data-price="2000" data-description="Стильный гаражка в стиле Chemistry">
+            <button class="favorite">★</button>
+            <img src="./img1/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Jf5WHHfDY0jhyo8DEiv5dbMao7rrM3RfG8b-cozg.png" alt="Glock Fade">
+            <p><strong>Chemistry G Door</strong></p>
+            <p>2 000 ₴</p>
+            <p class="description">Стильный гаражка в стиле Chemistry</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="27" data-name="Anime Thompson" data-price="200" data-description="Стильный пистолет Anime Thompson">
+            <button class="favorite">★</button>
+            <img src="./img1/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Vd5WLHfDY0jhyo8DEiv5dbMK04qbE3R_q71saH9lE.png" alt="Glock Fade">
+            <p><strong>Anime Thompson</strong></p>
+            <p>200 ₴</p>
+            <p class="description">Стильный пистолет Anime Thompson</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item" data-id="28" data-name="Monsters Berdanka" data-price="2000" data-description="Стильный пистолет Glock">
+            <button class="favorite">★</button>
+            <img src="./img1/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Vf7WLFfDY0jhyo8DEiv5dYP6o6rrYySPG4Fu-PEhc.png" alt="Glock Fade">
+            <p><strong>Glock Fade</strong></p>
+            <p>2 000 ₴</p>
+            <p class="description">Стильный берданка с рисунками монстров</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
+        <div class="item" data-id="29" data-name="Red AK-47" data-price="2500" data-description="Стильная винтовка в красной расцветке">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
+            <img src="./img1/6TMcQ7eX6E0EZl2byXi7vaVKyDk_zQLX05x6eLCFM9neAckxGDf7qU2e2gu64OnAeQ7835Zd7WLEfCk4nReh8DEiv5daPa46qLE0R_637f9wrAI.png" alt="Glock Fade">
+            <p><strong>Red AK-47</strong></p>
+            <p>2 500 ₴</p>
+            <p class="description">Стильная винтовка в красной расцветке</p>
             <button class="add-to-cart">Add to cart</button>
-        </div><div class="item">
+        </div>
+        <div class="item" data-id="30" data-name="Without Revolver" data-price="30000" data-description="Крайне редки и дорогой револьвер">
             <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
+            <img src="./img1/Sz5mfPQsyIb5CdN6KMuArOzQDmtzweis2blgl3SD.png" alt="Glock Fade">
+            <p><strong>Without Revolver</strong></p>
+            <p>30 000 ₴</p>
+            <p class="description">Крайне редки и дорогой револьвер</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
 
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div><div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>50 243 ₴</p>
-            <p class="description">Описание товара 1</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
-
-        <div class="item">
-            <button class="favorite">★</button>
-            <img src="./img/731194749_preview_Tempered_AK47.png" alt="Товар">
-            <p><strong>Название товара</strong></p>
-            <p>32 599 ₴</p>
-            <p class="description">Описание товара 2</p>
-            <button class="add-to-cart">Add to cart</button>
-        </div>
     </div>
+
+    <div class="success-message" id="successMessage">
+        Товар добавлен в корзину!
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
